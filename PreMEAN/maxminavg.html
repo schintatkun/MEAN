@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Max Min Avg</title>
+    <script>
+        function maxminavg(arr){
+            var max = arr[0];
+            var min = arr[0];
+            var sum = arr[0];
+            for (var i = 1; i<arr.length; i++){
+                if(arr[i]>max){
+                    max = arr[i];
+                }
+                if(arr[i]<min){
+                    min = arr[i];
+                }
+                else{sum += arr[i];}
+            }
+            var avg = sum/arr.length;
+        return "The minimum is "+min+", the maximum is "+max+", and the average is "+avg;
+        }
+        console.log(maxminavg([1,-2,9,4]));
+    </script>
+</head>
+<body>
+</body>
+</html>
