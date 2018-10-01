@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hundred Acre Wood</title>
+    <script>
+        var tigger = {character: "Tigger"};
+        var pooh = {character: "Winnie the Pooh"};
+        tigger.north = pooh;
+
+        var piglet = { character: "Piglet"};        // create Piglet's home object with just the character attribute
+        piglet.east = tigger.north;          // Piglet's east attribute is Tigger's north attribute, which is a memory address
+        tigger.north.west = piglet;
+        
+        var bees = {character: "Bees"};
+        bees.west = tigger.north;
+        tiger.north.east = bees;
+
+        var christopherRobin = {character: "Christopher Robin"};
+        var kanga = {character: "Kanga"};
+        var owl = {character:"Owl"};
+        var rabbit = {character: "Rabbit"};
+        christopherRobin.south = tigger.north;
+        christopherRobin.north = Kanga;
+        piglet.north = owl;
+        christopherRobin.west = piglet.north;
+        bees.north = rabbit;
+        christopherRobin.west = bees.north;
+
+        var gopher = {character: "Gopher"};
+        gopher.west = rabbit;
+        rabbit.east = bees.north.east;
+
+        var eeyore = {character: "Eeyore"};
+        var heffalumps = {character: "Heffalumps"};
+        eeyore.south = christopherRobin.north;
+        kanga.north = eeyore;
+        eeyore.east = heffalumps;
+        heffalumps.west = kanga.north;
+
+
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
