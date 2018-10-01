@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FizzBuzz</title>
+    <script>
+        function FizzBuzz(num){
+            //Bonus 2 Rather than have the function log each element, return a nicely formatted string with all the elements. 
+            //Include commas where appropriate to make it easier to read.
+            var resultStr ="";
+            function checkFizzBuzz(i){
+                if(i%15 == 0){
+                    resultStr += "FizzBuzz, ";
+                }else if (i%5 ==0){
+                    resultStr += "Buzz, ";
+                }else if (i%3 == 0){
+                    resultStr += "Fizz, "
+                }else{
+                    resultStr = resultStr + i+", ";
+                }
+            }
+            //Bonus 1 Validate user input. If the function is not passed a positive number, either throw an error or return null.
+            if (num <1){
+                return console.log("Given input number must be greater than 0.");
+            }
+            
+            for (var i = 1;i<=num;i++){
+                if(i==num){resultStr +="and "+"FizzBuzz.";}
+                else{checkFizzBuzz(i);}
+            }
+        return console.log(resultStr);
+        }
+        FizzBuzz(-1);
+        FizzBuzz(20);
+    </script>
+</head>
+<body>
+</body>
+</html>
