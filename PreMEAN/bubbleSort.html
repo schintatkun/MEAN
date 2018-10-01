@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bubble Sort</title>
+    <script>
+        function bubbleSort(arr){
+            for (var i=0;i<arr.length-1;i++){
+                for(var j=0;j<arr.length-i;j++){
+                    var current = arr[j];
+                    var comparison = arr[j+1];
+                    if (current>comparison){
+                        arr.splice(j,2, comparison, current);
+                    }
+                }
+            }
+            return arr;
+        }
+        console.log(bubbleSort([6,2,4,3,7,9,5,7]));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
