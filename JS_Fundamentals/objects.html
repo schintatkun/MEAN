@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Objects</title>
+    <script>
+    let students = [
+    {name: 'Remy', cohort: 'Jan'},
+    {name: 'Genevieve', cohort: 'March'},
+    {name: 'Chuck', cohort: 'Jan'},
+    {name: 'Osmund', cohort: 'June'},
+    {name: 'Nikki', cohort: 'June'},
+    {name: 'Boris', cohort: 'June'}
+    ];
+
+    let users = {
+    employees: [
+        {'first_name':  'Miguel', 'last_name' : 'Jones'},
+        {'first_name' : 'Ernie', 'last_name' : 'Bertson'},
+        {'first_name' : 'Nora', 'last_name' : 'Lu'},
+        {'first_name' : 'Sally', 'last_name' : 'Barkyoumb'}
+    ],
+    managers: [
+       {'first_name' : 'Lillian', 'last_name' : 'Chambers'},
+       {'first_name' : 'Gordon', 'last_name' : 'Poe'}
+    ]
+    };
+    function listStudent(arr){
+        for (let i=0;i<arr.length; i++){
+            console.log("Name: "+arr[i]['name']+" , Cohort: "+arr[i]['cohort']);
+        }
+        
+    }
+    function listUser(users){
+        for (let position in users){
+            console.log(position);
+        let index = 1;
+            for (let person in users[position]){
+                let name = users[position][person]['first_name']+" "+users[position][person]['last_name'];
+                console.log(index+ " "+ name + " "+name.length);
+                index ++;
+            }    
+        }
+    }
+    listStudent(students);
+    listUser(users);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
