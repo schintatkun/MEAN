@@ -9,10 +9,10 @@
         function bubbleSort(arr){
             for (var i=0;i<arr.length-1;i++){
                 for(var j=0;j<arr.length-i;j++){
-                    var current = arr[j];
-                    var comparison = arr[j+1];
-                    if (current>comparison){
-                        arr.splice(j,2, comparison, current);
+                    var currentNum = arr[j];
+                    var nextNum = arr[j+1];
+                    if (currentNum>nextNum){
+                        arr.splice(j,2, nextNum, currentNum);
                     }
                 }
             }

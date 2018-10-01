@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Users</title>
+    <script>
+        function userLanguages(arr){
+            for (var i=0;i<arr.length;i++){
+                var lang = "";
+                
+                for(var j=0;j<arr[i]['languages'].length;j++){
+                    lang += arr[i]['languages'][j]+" ";
+                }
+                console.log(arr[i]['fname']+" "+ arr[i]['lname']+"knows "+lang);
+            }
+        }
+
+
+users = [
+  {
+    fname: "Kermit",
+    lname: "the Frog",
+    languages: ["Python", "JavaScript", "C#", "HTML", "CSS", "SQL"],
+    interests: {
+      music: ["guitar", "flute"],
+      dance: ["tap", "salsa"],
+      television: ["Black Mirror", "Stranger Things"]
+    }
+  },
+  {
+    fname: "Winnie",
+    lname: "the Pooh",
+    languages: ["Python", "Swift", "Java"],
+    interests: {
+      food: ["honey", "honeycomb"],
+      flowers: ["honeysuckle"],
+      mysteries: ["Heffalumps"]
+    }
+  },
+  {
+    fname: "Arthur",
+    lname: "Dent",
+    languages: ["JavaScript", "HTML", "Go"],
+    interests: {
+      space: ["stars", "planets", "improbability"],
+      home: ["tea", "yellow bulldozers"]
+    }
+  }
+]
+userLanguages(users);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
