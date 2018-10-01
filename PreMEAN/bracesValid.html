@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Braces Valid</title>
+    <script>
+        function bracesValid(braces){
+            braces = braces.split("");
+            let open = ["{","(","["];
+            let close = ["}",")","]"];
+            let track = [];
+            for (let i =0; i< braces.length; i++){
+                let current = braces[i];
+                if(open.indexOf(current) != -1){
+                    track.push(current);
+                }else if(close.indexOf(current) == open.indexOf(track[track.length -1])){
+                    track.pop();
+                }else{
+                    return false;
+                }
+            }
+            if (track.length==0){
+                return true;
+            }else{
+                return false;
+            }
+        }
+    console.log(bracesValid("[[[]]]())")); //false
+    console.log(bracesValid("{()[]}{}")); //true
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
