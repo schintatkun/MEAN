@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trivia</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $.get("https://opentdb.com/api.php?amount=10&category=11&difficulty=easy&type=boolean", displayName)
+            // Notice that displayName is a function that takes in 1 parameter (this is the data that comes back from the API)
+            function displayName(data) {
+                var el = document.getElementById('category1');
+                
+                for (var i =0; i<data['results'].length;i++){
+                    el.innerHTML = el.innerHTML+"<ol>"+(i+1)+". "+data['results'][i]['question']+"</ol>";
+                    el.innerHTML = el.innerHTML+"<ul><li>"+"True"+"</li><li>"+"False"+"</li></ul>";
+                }
+                console.log(data['results']);
+            }
+    })
+
+    </script>
+</head>
+<body>
+    <div id="category1">
+
+
+    </div>
+</body>
+</html>
