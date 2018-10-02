@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ninja Class II</title>
+    <script>
+        function Ninja(name) {
+            var speed = 3;
+            var strength = 3;
+            this.health = 100;
+            this.name = name;
+            Ninja.prototype.sayName = function () {
+                console.log("My ninja name is " + this.name);
+                return this;
+            }
+            Ninja.prototype.showStats = function () {
+                console.log(`Name: ${this.name}, Health: ${this.health}, Speed : ${speed}, Strength : ${strength}`);
+                return this;
+            }
+            Ninja.prototype.drinkSake = function () {
+                this.health += 10;
+                return this;
+            }
+            Ninja.prototype.punch = function(opponent){
+                // check if opponent is Ninja
+                if ( opponent instanceof Ninja == true){
+                opponent.health -=5;
+                console.log(`${opponent.name} was punched by ${this.name} and lost 5 Health!`);
+                return this;
+                }else{
+                    console.log("Your opponent isn't ninja");
+                }
+            }
+            Ninja.prototype.kick = function(opponent){
+                // check if opponent is Ninja
+                if (opponent instanceof Ninja == true){
+                    opponent.health -= 15;
+                    console.log(`${opponent.name} was kicked by ${this.name} and lost 15 health!`);
+                    return this;
+                }else{
+                    console.log("Your opponent isn't ninja");
+                }
+            }
+
+        }
+        var ninja1 = new Ninja("Hyabura");
+        var ninja2 = new Ninja("Hatori");
+        var x =0;
+        ninja1.punch(ninja2);
+        ninja1.punch(x); // should get error message
+        ninja1.kick(ninja2);
+        ninja2.showStats();
+        
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
