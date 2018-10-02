@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Game of Thrones</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+
+            el = document.getElementById('info');
+            $('#stark').click(function(){
+                $.get("https://anapioficeandfire.com/api/houses/362", displayName);  
+            })
+            //Targaryen api doesn't work
+            // $('#targaryen').click(function(){
+            //     $.get("https://anapioficeandfire.com/api/houses/378", displayName);  
+            // })
+            $('#lannister').click(function(){
+                $.get("https://anapioficeandfire.com/api/houses/229", displayName);  
+            })
+            $('#baratheon').click(function(){
+                $.get("https://anapioficeandfire.com/api/houses/16", displayName);  
+            })
+
+            function displayName(data){
+                $('#info').empty();
+                el.innerHTML = el.innerHTML+"<h1>Name :"+data['name']+"</h1>";
+                el.innerHTML = el.innerHTML+"<h1>Words :"+data['words']+"</h1>";
+                el.innerHTML = el.innerHTML+"Title :";
+                for (var i=0;i<data['titles'].length;i++){
+                    el.innerHTML= el.innerHTML+data['titles'][i];
+                }
+                console.log(data);
+            }
+        })
+        
+    </script>
+</head>
+<body>
+    <a href="#" id="stark">House Stark</a>
+    <!-- <a href="#" id="targaryen">House Targaryen</a> -->
+    <a href="#" id="lannister">House Lannister</a>
+    <a href="#" id="baratheon">House Baratheon</a>
+    <div id="info"></div>
+</body>
+</html>
