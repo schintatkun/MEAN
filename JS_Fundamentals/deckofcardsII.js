@@ -7,6 +7,9 @@
                 let drawCard = deck.deal();
                 this.hand.push(drawCard);
             }
+            discard(){
+                this.hand.pop();
+            }
         }
         class Card{
             constructor(suit, strVal, val){
@@ -53,6 +56,7 @@
             deal(){
                 return this.cards.pop();
             }
+
         }
 
         
@@ -63,8 +67,10 @@
         // deck.reset();
         // console.log(deck.cards);
 
-        let Brant = new Player();
-        Brant.draw(deck);
-        Brant.draw(deck);
-        console.log(Brant.hand);
+        let dojo = new Player();
+        dojo.draw(deck);
+        dojo.draw(deck);
+        console.log(dojo.hand);
+        dojo.discard();
+        console.log(dojo.hand);
 
