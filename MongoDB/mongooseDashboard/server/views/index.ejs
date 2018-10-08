@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Welcome to Animal Dashboard</h1>
+    <% for(let animal of allAnimals){%>
+        <p>Name: <%= animal.name %> ID: <%= animal.id %> <a href="/animals/<%= animal.id %>">Show</a></p>    
+    <% } %>
+    <a href="/animals/new">Add Animal</a>
+</body>
+</html>
