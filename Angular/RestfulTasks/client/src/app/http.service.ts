@@ -18,5 +18,3 @@ export class HttpService {
     tempObservable.subscribe(data => console.log("Got our tasks!", data));
  }
 }
-
-
