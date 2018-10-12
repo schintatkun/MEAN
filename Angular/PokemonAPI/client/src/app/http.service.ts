@@ -18,7 +18,7 @@ export class HttpService {
       let url = data['abilities'][0]['ability']['url'];
       console.log(url);
       const obs = this._http.get(url);
-      obs.subscribe(data => console.log(`Other ${data['flavor_text_entries'].length} pokemons have same ability as ${name} does.`));
+      obs.subscribe(data => console.log(`Other ${data['flavor_text_entries'].length-1} pokemons have same ability as ${name} does.`));
     }
     );
   }
