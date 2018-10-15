@@ -1,0 +1,20 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+    <h1>Restful Tasks Interactive (with Nested Component)</h1>
+    <!-- <app-task *ngIf="mytask" [onbtnShowDesc]="mytask"></app-task> -->
+  <button (click)="onbtnShowAll()">Get All Tasks</button>
+    <div *ngIf="tasks">
+      <div *ngFor="let task of tasks">
+        <p>{{task.title}} <button (click)="onbtnShowDesc(task)">Show Desc!</button></p>
+      </div>
+    </div>
+    <div *ngIf='mytask'>
+      <p>---------------- display info -------------------</p>
+      <p>{{mytask.title}}</p>
+      <p>{{mytask.description}}</p>
+      <p>---------------------------------------------------</p>
+    </div>
+        <app-task *ngIf="mytask" [onbtnShowDesc]="mytask"></app-task>
+</div>
+
+

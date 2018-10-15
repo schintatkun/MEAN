@@ -1,4 +1,3 @@
-const bp = require('body-parser');
 const Task = require('./models');
 module.exports = {
     index:(req, res)=>{

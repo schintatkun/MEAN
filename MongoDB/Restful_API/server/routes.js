@@ -3,7 +3,7 @@ const controller = require('./controller');
 module.exports = function(app){
     
     app.use(bp.urlencoded({extended:true}));
-
+    app.use(bp.json());
     app.get('/',controller.index);
     app.post('/tasks',controller.createTask);
     app.get('/tasks/:id', controller.getTask);
