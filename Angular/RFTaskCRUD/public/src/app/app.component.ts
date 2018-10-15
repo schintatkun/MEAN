@@ -10,7 +10,6 @@ export class AppComponent implements OnInit{
   mytask: any;
   newTask: any;
   selectedTask: any;
-  ID: any = '';
   constructor(private _httpService: HttpService){}
   ngOnInit(){
     this.newTask = {title:"", description:""};
@@ -24,11 +23,10 @@ export class AppComponent implements OnInit{
   }
   onbtnShowDesc(id){
       console.log('this is task : ',id);
-      this.ID = id;
       let obs = this._httpService.getOneTask(id);
       obs.subscribe(data=>{
         console.log("Got a Task from DB serach by ID", data);
-        this.mytask = data['task']._id;
+        this.mytask = data['task'];
       })
     }
   

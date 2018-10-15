@@ -41,10 +41,13 @@
     <div *ngIf="tasks">
       <div *ngFor="let task of tasks">
         <p>{{task.title}} <button (click)="onbtnShowDesc(task._id)">Show Desc!</button></p>
-        <p *ngIf='ID == mytask'>
-          hello wrold
-        </p>
       </div>
+    </div>
+    <div *ngIf='mytask'>
+      <p>---------------- display info -------------------</p>
+      <p>{{mytask.title}}</p>
+      <p>{{mytask.description}}</p>
+      <p>---------------------------------------------------</p>
     </div>
 
   <!----------- End Restful Tasks Interactive section --------------->
