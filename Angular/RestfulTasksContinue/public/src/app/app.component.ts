@@ -10,11 +10,12 @@ export class AppComponent implements OnInit{
   title = 'Restful Tasks API';
   tasks = [];
   task2nd = {};
+
+  //dependency injection in constructor   name as _httpService
   constructor(private _httpService: HttpService) {}
   
   ngOnInit(){
   this.getTasksFromService();
-  this.getsecondTaskFromService();
   }
 
   getTasksFromService(){
@@ -22,15 +23,8 @@ export class AppComponent implements OnInit{
     obs.subscribe(data=>{
       console.log("Got our tasks",data)
       this.tasks = data['task'];
-      console.log(this.tasks);
-  });}
-
-  getsecondTaskFromService(){
-    let obs = this._httpService.getTasks();
-    obs.subscribe(data=>{
-      this.task2nd = data['task'][1];
-    })
-  }
+  });
+}
 
 }
 

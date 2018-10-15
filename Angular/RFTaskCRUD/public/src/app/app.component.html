@@ -1,0 +1,52 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>Restful Tasks CRUD</h1>
+  <div>
+    <h3>New Task</h3>
+    <form (submit)="onSubmit()">
+      <p>{{ newTask | json }}</p>
+      title: <input [(ngModel)]="newTask.title" name="newTask.title" type="text" /><br>
+      Description: <input [(ngModel)]="newTask.description" name="newTask.description" type="text"/><br>
+      <input type="submit" value="Create Task">
+    </form>
+  </div>
+
+
+  <div>
+    <h1>Show all Tasks</h1>
+    <button (click)="onbtnShowAll()">Get All Tasks</button>
+    <div *ngIf="tasks">
+      <div *ngFor="let task of tasks">
+        <p>{{task.title}}</p>
+        <p>{{task.description}}</p>
+        <button (click)="onbtnEdit(task)">Edit</button>
+        <button (click)="onbtnDelete(task._id)">Delete</button>
+      </div>
+      <div *ngIf = "selectedTask">
+        <!-- <p>{{selectedTask | json }}</p> -->
+        <form (submit)="onbtnUpdate(selectedTask)">
+          Title: <input [(ngModel)]="selectedTask.title" name="selectedTask.title" type="text"/><br>
+          Description: <input [(ngModel)]="selectedTask.description" name="selectedTask.description" type="text" /><br>
+          <input type="submit" value="update" />
+        </form>
+      </div>
+    </div>
+  </div>
+
+  
+  <!------- This section is Restful Tasks Interactive assignment ----->
+  
+  <h1>Restful Tasks Interactive</h1>
+  <button (click)="onbtnShowAll()">Get All Tasks</button>
+    <div *ngIf="tasks">
+      <div *ngFor="let task of tasks">
+        <p>{{task.title}} <button (click)="onbtnShowDesc(task._id)">Show Desc!</button></p>
+        <p *ngIf='ID == mytask'>
+          hello wrold
+        </p>
+      </div>
+    </div>
+
+  <!----------- End Restful Tasks Interactive section --------------->
+
+</div>
