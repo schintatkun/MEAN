@@ -27,9 +27,8 @@ export class AppComponent implements OnInit{
   //   })
   // }
 
-  onbtnShowDesc(task){
-        this.mytask = task;
-    }
+  onbtnShowDesc(task){this.mytask = task;
+  }
   
 
 }
