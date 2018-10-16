@@ -1,0 +1,11 @@
+<div class="showMyCake">
+<h1>Baked by {{displayCake.name}}</h1>
+<img src="{{displayCake.image}}" alt="">
+<div *ngIf="displayCake.comment != null">
+  <h4>List all of comment about this cake</h4>
+  <h4>Rating is : {{avg}}</h4>
+  <ul *ngFor="let comment of displayCake.comment">
+    <li>{{comment.content}}</li>
+  </ul>
+</div>
+</div>

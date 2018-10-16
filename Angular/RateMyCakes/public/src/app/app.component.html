@@ -1,0 +1,41 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>{{ title }}!</h1>
+  <div class="leftcontent">
+    <h3>Submit a cake to be rated</h3>
+    <form (submit)="createCake()">
+      Baker name:<br>
+      <input type="text" name="newCake.name" [(ngModel)]="newCake.name" class="form-control"/><br>
+      Image URL:<br>
+      <input type="text" name="newCake.image" [(ngModel)]="newCake.image" class="form-control" /><br>
+      <input type="submit" value="Submit" class="btn btn-default"/>
+    </form>
+
+        <app-cakeinfo  *ngIf="imgClick" [displayCake]="myCake"></app-cakeinfo>
+
+  </div>
+
+  <div class="rightcontent">
+    <div *ngFor="let cake of cakes">
+      
+        <div class="leftcontent">
+          <img src="{{cake.image}}" alt="" class="showcake" (click)="getOneCake(cake._id)">
+        </div>
+        <div class="rightForm">
+          <form (submit)="createComment(cake._id)">
+              <select name="comment.rating" [(ngModel)]="comment.rating" class="form-control" >
+                  <option value = "1" >1 <span>Stars</span></option>
+                  <option value = "2">2 <span>Stars</span></option>
+                  <option value = "3">3 <span>Stars</span></option>
+                  <option value = "4">4 <span>Stars</span></option>
+                  <option value = "5">5 <span>Stars</span></option>
+                </select><br>
+                <textarea name="comment.content" [(ngModel)]="comment.content" class="form-control"></textarea><br>
+                <input type="submit" value="Rate!" class="btn btn-default"/>
+          </form>
+        </div>
+    </div>
+
+  </div>
+
+</div>

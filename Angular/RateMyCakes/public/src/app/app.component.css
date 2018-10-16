@@ -1,0 +1,22 @@
+.leftcontent{
+    display: inline-block;
+    width: 40%;
+    vertical-align: top;
+    border: 1px solid black;
+}
+.rightcontent{
+    display: inline-block;
+    width: 59%;
+    vertical-align: top;
+    border: 1px solid black;
+    overflow: auto;
+    height: 300px;
+}
+.showcake{
+    width: 100px;
+    height: 100px;
+}
+.rightForm{
+    display: inline-block;
+    width: 59%;
+}
