@@ -1,0 +1,10 @@
+img{
+    width:30%;
+    display: inline-block;
+    vertical-align: top;
+}
+div{
+    display: inline-block;
+    width:40%;
+    margin-left:10%;
+}
