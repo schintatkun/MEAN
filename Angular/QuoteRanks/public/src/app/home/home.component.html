@@ -1,0 +1,20 @@
+<a href="/new">Add a Quotable author</a>
+<p>We have quotes by:</p>
+<div *ngIf="listofAuthors" class="centerDiv">
+<table>
+  <thead>
+    <tr>
+      <td>Author</td>
+      <td>Actions available</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let author of listofAuthors">
+      <td>{{author.name}}</td>
+      <td><a href="/quotes/{{author._id}}"><button>View Quotes</button></a>
+        <a href="/edit/{{author._id}}"><button>Edit</button></a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>

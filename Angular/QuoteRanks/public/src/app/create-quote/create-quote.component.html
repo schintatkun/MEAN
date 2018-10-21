@@ -1,0 +1,9 @@
+<p><a href="/home">Home</a></p>
+<div *ngIf="author">
+<p>Provide a quote by {{author.name}}</p>
+  <p>{{ quote | json }}</p>
+  <label>Quote:</label><br>
+  <p *ngIf="error.length>0">{{error}}</p>
+  <input type="text" [(ngModel)]=quote.quote name="quote.quotes"/><br>
+  <p><button (click)="goHome()">Cancel</button><button (click)="createQuote()">Submit</button></p>
+</div>

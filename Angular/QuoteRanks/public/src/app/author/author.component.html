@@ -1,0 +1,22 @@
+<div *ngIf="author" class="centerDiv">
+<p><a href="/">Home</a> | <a href="/write/{{author._id}}">Add a quote</a></p>
+  <p>Quotes by {{author.name}} :</p>
+  <table>
+    <thead>
+      <tr>
+        <td>Quote</td>
+        <td>Votes</td>
+        <td>Actions available</td>
+      </tr>
+    </thead>
+    <tr *ngFor="let quote of author.quotes">
+      <td>{{quote.quote}}</td>
+      <td>{{quote.votes}}</td>
+      <td>
+        <button (click)="Vote(1,quote._id)">Vote up</button> | 
+        <button (click)="Vote(-1,quote._id)">Vote down</button> | 
+        <button (click)="deleteQuote(quote._id)">Delete</button>
+      </td>
+    </tr>
+  </table>
+</div>

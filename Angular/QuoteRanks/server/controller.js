@@ -16,7 +16,7 @@ module.exports = {
             .then(data=>console.log(data) || res.json(data))
             .catch(errs=>console.log(errs) || res.json(errs))
     },
-    upodateAuthor:function(req,res){
+    updateAuthor:function(req,res){
         Author.findByIdAndUpdate(req.params.author_id,req.body, {new:true, runValidators:true})
             .then(data=>console.log(data)|| res.json(data))
             .catch(errs=>console.log(errs) || res.json(errs))
@@ -26,5 +26,17 @@ module.exports = {
             .then(data=>console.log(data) || res.json(data))
             .catch(errs=>console.log(errs) || res.json(errs))
     },
+    updateQuote:function(req,res){
+        Author.findOneAndUpdate({"quotes._id":req.params.quote_id}, {$inc:{"quotes.$.votes":req.body.votes}}
+    , {new:true, runValidators:true})
+            .then(data=>console.log(data) || res.json(data))
+            .catch(errs=>console.log(errs) || res.json(errs))
+    },
+    deleteQuote:function(req,res){
+        Author.findOneAndUpdate({"quotes._id":req.params.quote_id}, {$pull: {quotes: {_id:req.params.quote_id}}},
+        {new:true, runValidators:true})
+        .then(data=>console.log(data) || res.json(data))
+        .catch(errs=>console.log(errs) || res.json(errs))
+    }
     
 }

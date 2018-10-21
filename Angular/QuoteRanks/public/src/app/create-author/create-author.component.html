@@ -1,0 +1,10 @@
+<p><a href="/home">Home</a></p>
+<p>Add a new quotable author:</p>
+<div>
+  <p>{{ author | json }}</p>
+  <label>Name:</label><br>
+  <p *ngIf="error.length>0">{{error}}</p>
+  <input type="text" [(ngModel)]=author.name name="author.name"/><br>
+  <!-- <a href="/"><button type="menu">Cancel</button></a> -->
+  <p><button (click)="goHome()">Cancel</button><button (click)="createAuthor()">Submit</button></p>
+</div>
