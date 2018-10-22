@@ -29,7 +29,10 @@ export class EditAuthorComponent implements OnInit {
     let obs =this._httpService.updateAuthor(this.author);
     obs.subscribe(data=>{
       if('errors' in data){
-        this.error = data;
+        this.error = data['message'];
+        console.log('xxxxx ',this.error);
+        //remove some unwanted error message
+        this.error = this.error.substring(25);
       }else{
         this.redirectHome();
       }

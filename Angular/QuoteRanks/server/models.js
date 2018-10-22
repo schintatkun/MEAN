@@ -4,7 +4,7 @@ mgoose.connect("mongodb://localhost/quote_ranks", {useNewUrlParser:true},(errs)=
 const QuoteSchema = new mgoose.Schema({
     quote:{
         type: String,
-        required: true,
+        required: [true, "cannot be empty"],
         minlength: [3,"Quote must be at least 3 characters"]
     },
     votes:{
@@ -16,7 +16,7 @@ const QuoteSchema = new mgoose.Schema({
 const AuthorSchema = new mgoose.Schema({
     name:{
         type:String,
-        required: true,
+        required: [true, "cannot be empty"],
         minlength:[3, "Name must be at least 3 characters."]
     },
     quotes: [QuoteSchema]
