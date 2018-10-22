@@ -9,6 +9,7 @@ import { CreateQuoteComponent } from './create-quote/create-quote.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule} from '@angular/common/http';
 import { EditAuthorComponent } from './edit-author/edit-author.component';
+import { HttpService } from './http.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,7 @@ import { EditAuthorComponent } from './edit-author/edit-author.component';
     FormsModule,     //needed when using form
     HttpClientModule //a must 
   ],
-  providers: [],
+  providers: [HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
