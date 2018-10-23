@@ -2,7 +2,8 @@ const Product = require('./models');
 
 module.exports = {
     getAllProducts: function(req,res){
-        Product.find({})
+        // Product.find({}).sort({title: 1})  ->sort title A-Z
+        Product.find({}).sort({title: 1})
             .then(data=>console.log(data) || res.json(data))
             .catch(errs=>console.log(errs) || res.json(errs))
     },

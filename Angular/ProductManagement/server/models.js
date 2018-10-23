@@ -1,4 +1,5 @@
 const mgoose = require('mongoose');
+var uniqueValidator = require('mongoose-unique-validator');
 mgoose.connect("mongodb://localhost/productmanagement", {useNewUrlParser:true},(errs)=>errs?console.log(errs):console.log('DB is ready'));
 
 // const QuoteSchema = new mgoose.Schema({
@@ -17,7 +18,9 @@ const ProductSchema = new mgoose.Schema({
     title:{
         type:String,
         required: [true, "cannot be empty"],
-        minlength:[3, "title must be at least 3 characters."]
+        minlength:[3, "title must be at least 3 characters."],
+        unique: true, 
+        uniqueCaseInsensitive: true ,
     },
     price: {
         type: Number,
@@ -31,4 +34,5 @@ const ProductSchema = new mgoose.Schema({
     }
 },{timestamps:true})
 
+ProductSchema.plugin(uniqueValidator, { message: 'pruduct cannot be duplicated!' });
 module.exports = mgoose.model('Product',ProductSchema)
