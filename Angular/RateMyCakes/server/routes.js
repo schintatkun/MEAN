@@ -7,6 +7,5 @@ module.exports = function(app){
     app.post('/cakes', controller.createCake);
     app.get('/cakes/:id',controller.showCake);
     app.post('/cakes/comment/:id',controller.createComment);
-
     return app;
 }
